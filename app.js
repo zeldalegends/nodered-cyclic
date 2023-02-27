@@ -1,20 +1,3 @@
-// *** System ***
-
-var os = require("os");
-console.log("Platform:", 
-	    os.release());
-console.log("IP:", 
-	    os.networkInterfaces().eth0[0].address);
-console.log("OS:", 
-	    os.version());
-console.log("CPU:",
-	    os.cpus().length, "x", os.cpus()[0].model, os.cpus()[0].speed, "MHz");
-console.log("RAM:",
-	    Math.round(os.totalmem() / 1024 / 1024 / 1024 * 100) / 100, "GB /",
-	    Math.round(os.freemem() / 1024 / 1024 / 1024 * 100) / 100, "GB free");
-
-// *** Node-RED ***
-
 var http = require('http');
 var express = require("express");
 var RED = require("node-red");
@@ -30,7 +13,7 @@ var server = http.createServer(app);
 
 // Create the settings object - see default settings.js file for other options
 var settings = {
-	httpAdminRoot: "/",
+	httpAdminRoot: "/editor",
 	httpNodeRoot: "/",
 	userDir: ".",
 	credentialSecret: false,
